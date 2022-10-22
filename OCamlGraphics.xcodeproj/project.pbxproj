@@ -7,23 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A1D16CB2290397E700FFE9D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D16CB1290397E700FFE9D0 /* AppDelegate.m */; };
-		A1D16CB5290397E700FFE9D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D16CB4290397E700FFE9D0 /* ViewController.m */; };
 		A1D16CB7290397E900FFE9D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1D16CB6290397E900FFE9D0 /* Assets.xcassets */; };
 		A1D16CBA290397E900FFE9D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1D16CB8290397E900FFE9D0 /* Main.storyboard */; };
 		A1D16CBC290397E900FFE9D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D16CBB290397E900FFE9D0 /* main.m */; };
+		A1D16CCC29046BA900FFE9D0 /* graphics.exe.o in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D16CCB29046B9900FFE9D0 /* graphics.exe.o */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1D16CC72903AD1100FFE9D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1D16CA5290397E700FFE9D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1D16CC32903A8D600FFE9D0;
+			remoteInfo = OCamlLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A1D16CC9290464F600FFE9D0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A1D16CAD290397E700FFE9D0 /* OCamlGraphics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCamlGraphics.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1D16CB0290397E700FFE9D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A1D16CB1290397E700FFE9D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A1D16CB3290397E700FFE9D0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A1D16CB4290397E700FFE9D0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A1D16CB6290397E900FFE9D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1D16CB9290397E900FFE9D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1D16CBB290397E900FFE9D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A1D16CBD290397E900FFE9D0 /* OCamlGraphics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OCamlGraphics.entitlements; sourceTree = "<group>"; };
+		A1D16CCB29046B9900FFE9D0 /* graphics.exe.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = graphics.exe.o; path = OCamlLib/_build/default/graphics.exe.o; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D16CCC29046BA900FFE9D0 /* graphics.exe.o in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +61,7 @@
 			children = (
 				A1D16CAF290397E700FFE9D0 /* OCamlGraphics */,
 				A1D16CAE290397E700FFE9D0 /* Products */,
+				A1D16CCA29046B9800FFE9D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,10 +76,6 @@
 		A1D16CAF290397E700FFE9D0 /* OCamlGraphics */ = {
 			isa = PBXGroup;
 			children = (
-				A1D16CB0290397E700FFE9D0 /* AppDelegate.h */,
-				A1D16CB1290397E700FFE9D0 /* AppDelegate.m */,
-				A1D16CB3290397E700FFE9D0 /* ViewController.h */,
-				A1D16CB4290397E700FFE9D0 /* ViewController.m */,
 				A1D16CB6290397E900FFE9D0 /* Assets.xcassets */,
 				A1D16CB8290397E900FFE9D0 /* Main.storyboard */,
 				A1D16CBB290397E900FFE9D0 /* main.m */,
@@ -68,7 +84,32 @@
 			path = OCamlGraphics;
 			sourceTree = "<group>";
 		};
+		A1D16CCA29046B9800FFE9D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1D16CCB29046B9900FFE9D0 /* graphics.exe.o */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		A1D16CC32903A8D600FFE9D0 /* OCamlLib */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION) --warn-undefined-variables";
+			buildConfigurationList = A1D16CC42903A8D600FFE9D0 /* Build configuration list for PBXLegacyTarget "OCamlLib" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "$(SRCROOT)/OCamlLib";
+			dependencies = (
+			);
+			name = OCamlLib;
+			passBuildSettingsInEnvironment = 1;
+			productName = OCamlLib;
+		};
+/* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
 		A1D16CAC290397E700FFE9D0 /* OCamlGraphics */ = {
@@ -78,10 +119,12 @@
 				A1D16CA9290397E700FFE9D0 /* Sources */,
 				A1D16CAA290397E700FFE9D0 /* Frameworks */,
 				A1D16CAB290397E700FFE9D0 /* Resources */,
+				A1D16CC9290464F600FFE9D0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A1D16CC82903AD1100FFE9D0 /* PBXTargetDependency */,
 			);
 			name = OCamlGraphics;
 			productName = OCamlGraphics;
@@ -100,6 +143,9 @@
 					A1D16CAC290397E700FFE9D0 = {
 						CreatedOnToolsVersion = 13.4;
 					};
+					A1D16CC32903A8D600FFE9D0 = {
+						CreatedOnToolsVersion = 13.4;
+					};
 				};
 			};
 			buildConfigurationList = A1D16CA8290397E700FFE9D0 /* Build configuration list for PBXProject "OCamlGraphics" */;
@@ -116,6 +162,7 @@
 			projectRoot = "";
 			targets = (
 				A1D16CAC290397E700FFE9D0 /* OCamlGraphics */,
+				A1D16CC32903A8D600FFE9D0 /* OCamlLib */,
 			);
 		};
 /* End PBXProject section */
@@ -137,13 +184,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1D16CB5290397E700FFE9D0 /* ViewController.m in Sources */,
 				A1D16CBC290397E900FFE9D0 /* main.m in Sources */,
-				A1D16CB2290397E700FFE9D0 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1D16CC82903AD1100FFE9D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1D16CC32903A8D600FFE9D0 /* OCamlLib */;
+			targetProxy = A1D16CC72903AD1100FFE9D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A1D16CB8290397E900FFE9D0 /* Main.storyboard */ = {
@@ -318,6 +371,33 @@
 			};
 			name = Release;
 		};
+		A1D16CC52903A8D600FFE9D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = JTJMWWNW66;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = graphics.o;
+			};
+			name = Debug;
+		};
+		A1D16CC62903A8D600FFE9D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = JTJMWWNW66;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = graphics.o;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -335,6 +415,15 @@
 			buildConfigurations = (
 				A1D16CC1290397E900FFE9D0 /* Debug */,
 				A1D16CC2290397E900FFE9D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1D16CC42903A8D600FFE9D0 /* Build configuration list for PBXLegacyTarget "OCamlLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1D16CC52903A8D600FFE9D0 /* Debug */,
+				A1D16CC62903A8D600FFE9D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

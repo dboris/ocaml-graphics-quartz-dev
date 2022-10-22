@@ -1,0 +1,7 @@
+(executable
+ (name graphics)
+ (foreign_stubs
+  (language c)
+  (flags (:standard -x objective-c))
+  (names AppDelegate ViewController))
+ (modes object))
