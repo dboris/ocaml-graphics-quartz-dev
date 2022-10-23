@@ -23,4 +23,48 @@ module Types (F : Ctypes.TYPE) = struct
 		let t = view ~read:to_t ~write:of_t point
 	end
 
+	module CGSize = struct
+		type size
+		let size : size structure typ = structure "CGSize"
+		let width = field size "width" double
+		let height = field size "height" double
+		let () = seal size
+
+		type t = { width : float; height : float }
+
+		let of_t t =
+			let s = make size in
+			setf s width t.width;
+			setf s height t.height;
+			s
+
+		let to_t s =
+			let width = getf s width and height = getf s height in
+			{ width; height }
+
+		let t = view ~read:to_t ~write:of_t size
+	end
+
+	module CGRect = struct
+		type rect
+		let rect : rect structure typ = structure "CGRect"
+		let origin = field rect "origin" CGPoint.point
+		let size = field rect "size" CGSize.size
+		let () = seal rect
+
+		type t = { origin : CGPoint.t; size : CGSize.t }
+
+		let of_t t =
+			let r = make rect in
+			setf r origin (CGPoint.of_t t.origin);
+			setf r size (CGSize.of_t t.size);
+			r
+
+		let to_t r =
+			let origin = CGPoint.to_t (getf r origin)
+			and size = CGSize.to_t (getf r size) in
+			{ origin; size }
+
+		let t = view ~read:to_t ~write:of_t rect
+	end
 end
