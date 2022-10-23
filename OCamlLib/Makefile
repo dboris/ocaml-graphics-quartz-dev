@@ -1,7 +1,9 @@
 .DEFAULT_GOAL := all
 OPAM_BIN := $(shell /opt/local/bin/opam var bin)
 
+ifeq ($(PROJECT_NAME),OCamlGraphics)
 include .env
+endif
 
 .PHONY: printvars
 printvars:

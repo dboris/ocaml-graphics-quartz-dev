@@ -13,28 +13,6 @@
 		A1D16CCC29046BA900FFE9D0 /* graphics.exe.o in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D16CCB29046B9900FFE9D0 /* graphics.exe.o */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A1D16CC72903AD1100FFE9D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A1D16CA5290397E700FFE9D0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A1D16CC32903A8D600FFE9D0;
-			remoteInfo = OCamlLib;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		A1D16CC9290464F600FFE9D0 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		A1D16CAD290397E700FFE9D0 /* OCamlGraphics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCamlGraphics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1D16CB6290397E900FFE9D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,12 +97,10 @@
 				A1D16CA9290397E700FFE9D0 /* Sources */,
 				A1D16CAA290397E700FFE9D0 /* Frameworks */,
 				A1D16CAB290397E700FFE9D0 /* Resources */,
-				A1D16CC9290464F600FFE9D0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A1D16CC82903AD1100FFE9D0 /* PBXTargetDependency */,
 			);
 			name = OCamlGraphics;
 			productName = OCamlGraphics;
@@ -189,14 +165,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A1D16CC82903AD1100FFE9D0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A1D16CC32903A8D600FFE9D0 /* OCamlLib */;
-			targetProxy = A1D16CC72903AD1100FFE9D0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A1D16CB8290397E900FFE9D0 /* Main.storyboard */ = {

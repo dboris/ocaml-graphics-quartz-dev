@@ -7,7 +7,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern void caml_startup (const char **);
+
 int main(int argc, const char * argv[]) {
+    caml_startup(argv);
+
     @autoreleasepool {
         // Setup code that might create autoreleased objects goes here.
     }
