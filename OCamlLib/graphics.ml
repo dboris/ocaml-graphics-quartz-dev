@@ -1,5 +1,5 @@
-open C.Type
-open C.Function
+open Core_graphics.C.Type
+open Core_graphics.C.Function
 
 let cgrect_of_pointer rect_ptr =
   Ctypes.ptr_of_raw_address rect_ptr

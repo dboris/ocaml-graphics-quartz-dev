@@ -1,24 +1,6 @@
 (executable
  (name graphics)
- (libraries ctypes)
- (ctypes
-  (external_library_name coregraphics)
-  (build_flags_resolver
-   (vendored
-    ; (c_flags (:standard -framework CoreGraphics))
-    ; (c_library_flags (:standard))
-    ))
-  (headers
-   (include "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.h"))
-  (type_description
-   (instance Type)
-   (functor Type_description))
-  (function_description
-   (concurrency unlocked)
-   (instance Function)
-   (functor Function_description))
-  (generated_types Types_generated)
-  (generated_entry_point C))
+ (libraries ctypes core_graphics)
  (foreign_stubs
   (language c)
   (flags (:standard -x objective-c))
