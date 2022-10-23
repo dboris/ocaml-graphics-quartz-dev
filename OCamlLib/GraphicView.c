@@ -14,7 +14,7 @@
     [super drawRect:dirty_rect];
 
     CGContextRef ctx = [[NSGraphicsContext currentContext] CGContext];
-    draw_rect(ctx, dirty_rect);
+    draw_rect(ctx, dirty_rect, self.bounds);
 }
 
 @end
