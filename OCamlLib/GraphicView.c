@@ -10,11 +10,11 @@
 
 @implementation GraphicView
 
-- (void)drawRect:(NSRect)dirtyRect {
-    [super drawRect:dirtyRect];
+- (void)drawRect:(NSRect)dirty_rect {
+    [super drawRect:dirty_rect];
 
     CGContextRef ctx = [[NSGraphicsContext currentContext] CGContext];
-    draw_rect(ctx);
+    draw_rect(ctx, dirty_rect);
 }
 
 @end
