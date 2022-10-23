@@ -67,4 +67,10 @@ module Types (F : Ctypes.TYPE) = struct
 
 		let t = view ~read:to_t ~write:of_t rect
 	end
+
+	module CGContext = struct
+		type t
+		let t : t Opaque.t typ = typedef Opaque.t "CGContextRef"
+	end
+
 end

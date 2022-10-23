@@ -2,7 +2,8 @@
 
 (env
   (dev
-    (flags (:standard -principal -w -27-33))
-    (c_flags (:standard -Wall -pedantic -Wextra -Wunused)))
+    (flags (:standard -principal -w -24-27-33))
+    ; (c_flags (:standard -Wall -pedantic -Wextra -Wunused))
+    )
   (release
     (ocamlopt_flags (:standard -O3))))

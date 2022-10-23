@@ -8,5 +8,7 @@ module Types = Types_generated
 module Functions (F : Ctypes.FOREIGN) = struct
   open F
 
-  (* let fill_rect = foreign "CGContextFillRect" (Types.context_ref @-> Types.rect @-> returning void) *)
+  let fill_rect =
+    foreign "CGContextFillRect" (Types.CGContext.t @-> Types.CGRect.rect @->
+      returning void)
 end

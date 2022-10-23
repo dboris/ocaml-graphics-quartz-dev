@@ -14,6 +14,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A16CA4C82904F5D6009BA67D /* GraphicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GraphicView.h; path = OCamlLib/GraphicView.h; sourceTree = SOURCE_ROOT; };
+		A16CA4C92904F5D6009BA67D /* GraphicView.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = GraphicView.c; path = OCamlLib/GraphicView.c; sourceTree = SOURCE_ROOT; };
 		A1D16CAD290397E700FFE9D0 /* OCamlGraphics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCamlGraphics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1D16CB6290397E900FFE9D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1D16CB9290397E900FFE9D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +58,8 @@
 			children = (
 				A1D16CB6290397E900FFE9D0 /* Assets.xcassets */,
 				A1D16CB8290397E900FFE9D0 /* Main.storyboard */,
+				A16CA4C82904F5D6009BA67D /* GraphicView.h */,
+				A16CA4C92904F5D6009BA67D /* GraphicView.c */,
 				A1D16CBB290397E900FFE9D0 /* main.m */,
 				A1D16CBD290397E900FFE9D0 /* OCamlGraphics.entitlements */,
 			);
