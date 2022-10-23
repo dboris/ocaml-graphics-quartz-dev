@@ -2,7 +2,7 @@
 
 (env
   (dev
-    (flags (:standard -principal -w -24-27-33))
+    (flags (:standard -principal -w -24-27-32-33-34))
     ; (c_flags (:standard -Wall -pedantic -Wextra -Wunused))
     )
   (release

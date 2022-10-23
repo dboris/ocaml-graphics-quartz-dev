@@ -6,7 +6,8 @@
 
 #include "graphics.h"
 
-void draw_rect (CGContextRef ctx, CGRect dirty_rect, CGRect bounds)
+void
+draw_rect (CGContextRef ctx, CGRect dirty_rect, CGRect bounds)
 {
 	static const value * closure = NULL;
 	if (closure == NULL) closure = caml_named_value("draw_rect");
