@@ -11,7 +11,7 @@ module View = struct
       dr.origin.x dr.origin.y dr.size.width dr.size.height;
 
     set_current_context ctx;
-    set_color ~alpha:0.5 yellow;
+    set_color ~alpha:0.2 yellow;
 
     fill_rect 0 0
       (Float.to_int bounds.size.width)

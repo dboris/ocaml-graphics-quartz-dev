@@ -49,17 +49,12 @@ and foreground = black
 
 (* Drawing *)
 
-let plot x' y' =
-  let x = Float.of_int x' and y = Float.of_int y' in
-  CGContext.fill_rect
-    (current_context ())
-    CGRect.(make ~x ~y ~width:1. ~height:1. |> of_t)
-
 let fill_rect x' y' w h =
-  if w < 0 || h < 0 then raise (Invalid_argument "fill_rect");
-  let origin = CGPoint.{ x = Float.of_int x'; y = Float.of_int y' }
-  and size = CGSize.{ width = Float.of_int w; height = Float.of_int h }
-  in
+  let x = Float.of_int x' and y = Float.of_int y'
+  and width = Float.of_int w and height = Float.of_int h in
   CGContext.fill_rect
     (current_context ())
-    (CGRect.of_t { origin; size })
+    CGRect.(make ~x ~y ~width ~height |> of_t)
+
+let plot x y =
+  fill_rect x y 1 1
