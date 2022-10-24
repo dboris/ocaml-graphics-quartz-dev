@@ -6,21 +6,23 @@ open Core_graphics.C.Function
 
 module GraphicsContext = struct
   type t =
-    { cg_context : CGContext.t Opaque.t option ref
-    ; x : float
-    ; y : float
-    ; color : int
+    { cg_context : CGContext.t Opaque.t option
+    ; line_width : float
     }
+
+  let current_context_ref : t ref =
+    ref { cg_context = None; line_width = 1. }
+
+  let get () =
+    Option.get !current_context_ref.cg_context
+
+  let set context =
+    current_context_ref :=
+      { !current_context_ref with cg_context = Some context }
+
+  let line_width () =
+    !current_context_ref.line_width
 end
-
-let current_context_ref : CGContext.t Opaque.t option ref =
-  ref None
-
-let current_context () =
-  Option.get !current_context_ref
-
-let set_current_context context =
-  current_context_ref := Some context
 
 (* Colors *)
 
@@ -32,9 +34,10 @@ let set_color ?(alpha = 1.) color =
   let r = (color lsr 16) land 0xFF |> Float.of_int
   and g = (color lsr 8) land 0xFF |> Float.of_int
   and b = color land 0xFF |> Float.of_int
-  and ctx = current_context ()
+  and ctx = GraphicsContext.get ()
   in
-  CGContext.set_rgb_fill_color ctx r g b alpha
+  CGContext.set_rgb_fill_color ctx r g b alpha;
+  CGContext.set_rgb_stroke_color ctx r g b alpha
 
 let black = 0x000000
 
@@ -60,8 +63,15 @@ and foreground = black
 
 let fill_rect x y width height =
   CGContext.fill_rect
-    (current_context ())
+    (GraphicsContext.get ())
     CGRect.(make ~x ~y ~width ~height)
 
 let plot x y =
-  fill_rect x y 1. 1.
+  let width = GraphicsContext.line_width () in
+  fill_rect x y width width
+
+let moveto x y =
+  CGContext.move_to_point (GraphicsContext.get ()) x y
+
+let set_line_width w =
+  CGContext.set_line_width (GraphicsContext.get ()) w

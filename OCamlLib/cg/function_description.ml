@@ -18,5 +18,17 @@ module Functions (F : Ctypes.FOREIGN) = struct
 		let set_rgb_fill_color =
 			foreign "CGContextSetRGBFillColor" (t @->
 				double @-> double @-> double @-> double @-> returning void)
+
+		let set_rgb_stroke_color =
+			foreign "CGContextSetRGBStrokeColor" (t @->
+				double @-> double @-> double @-> double @-> returning void)
+
+		let set_line_width =
+			foreign "CGContextSetLineWidth" (t @-> double @-> returning void)
+
+		let move_to_point =
+			foreign "CGContextMoveToPoint" (t @->
+				double @-> double @-> returning void)
+
 	end
 end

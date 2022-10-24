@@ -10,12 +10,13 @@ module View = struct
     Printf.eprintf "Dirty rect: x=%f, y=%f, width=%f, height=%f\n%!"
       dr.origin.x dr.origin.y dr.size.width dr.size.height;
 
-    set_current_context ctx;
+    GraphicsContext.set ctx;
 
     set_color ~alpha:0.2 yellow;
     fill_rect 0. 0. bounds.size.width bounds.size.height;
 
     set_color foreground;
+    set_line_width 2.;
     plot 100. 100.
 end
 
