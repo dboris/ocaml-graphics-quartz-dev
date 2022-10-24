@@ -1,0 +1,7 @@
+(library
+ (name graphics_quartz)
+ (libraries ctypes core_graphics)
+ (foreign_stubs
+  (language c)
+  (flags (:standard -x objective-c))
+  (names graphics)))

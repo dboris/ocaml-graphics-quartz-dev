@@ -1,8 +1,8 @@
 (executable
  (name graphics)
- (libraries ctypes core_graphics)
+ (libraries ctypes graphics_quartz core_graphics)
  (foreign_stubs
   (language c)
   (flags (:standard -x objective-c))
-  (names graphics AppDelegate ViewController GraphicView))
+  (names AppDelegate ViewController GraphicView))
  (modes object))
