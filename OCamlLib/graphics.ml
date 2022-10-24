@@ -1,5 +1,5 @@
 open Graphics_quartz
-open Core_graphics.C.Type
+
 
 module View = struct
   let draw_rect context dirty_rect_ptr bounds_ptr =
@@ -11,14 +11,12 @@ module View = struct
       dr.origin.x dr.origin.y dr.size.width dr.size.height;
 
     set_current_context ctx;
-    set_color ~alpha:0.2 yellow;
 
-    fill_rect 0 0
-      (Float.to_int bounds.size.width)
-      (Float.to_int bounds.size.height);
+    set_color ~alpha:0.2 yellow;
+    fill_rect 0. 0. bounds.size.width bounds.size.height;
 
     set_color foreground;
-    plot 100 100
+    plot 100. 100.
 end
 
 let main () =

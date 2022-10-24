@@ -1,8 +1,17 @@
-open Core_graphics.C.Type
+include Core_graphics.C.Type
 open Core_graphics.C.Function
 
 
 (* Graphics Context *)
+
+module GraphicsContext = struct
+  type t =
+    { cg_context : CGContext.t Opaque.t option ref
+    ; x : float
+    ; y : float
+    ; color : int
+    }
+end
 
 let current_context_ref : CGContext.t Opaque.t option ref =
   ref None
@@ -49,12 +58,10 @@ and foreground = black
 
 (* Drawing *)
 
-let fill_rect x' y' w h =
-  let x = Float.of_int x' and y = Float.of_int y'
-  and width = Float.of_int w and height = Float.of_int h in
+let fill_rect x y width height =
   CGContext.fill_rect
     (current_context ())
-    CGRect.(make ~x ~y ~width ~height |> of_t)
+    CGRect.(make ~x ~y ~width ~height)
 
 let plot x y =
-  fill_rect x y 1 1
+  fill_rect x y 1. 1.

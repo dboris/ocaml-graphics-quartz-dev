@@ -79,7 +79,7 @@ module Types (F : Ctypes.TYPE) = struct
 		let make ~x:x' ~y:y' ~width:width' ~height:height' =
 			{ origin = CGPoint.{ x = x'; y = y' }
 			; size = CGSize.{ width = width'; height = height' }
-			}
+			} |> of_t
 	end
 
 	module CGContext = struct
