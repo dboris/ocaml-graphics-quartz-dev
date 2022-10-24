@@ -58,15 +58,3 @@ let fill_rect x' y' w h =
   CGContext.fill_rect
     (current_context ())
     (CGRect.of_t { origin; size })
-
-(* Helpers *)
-
-let cgrect_of_raw_address rect_addr =
-  Ctypes.ptr_of_raw_address rect_addr
-  |> Ctypes.(coerce (ptr void) (ptr CGRect.rect))
-  |> Ctypes.(!@)
-  |> CGRect.to_t
-
-let cgcontext_of_raw_address ctx_addr =
-  Ctypes.ptr_of_raw_address ctx_addr
-  |> Ctypes.(coerce (ptr void) CGContext.t)

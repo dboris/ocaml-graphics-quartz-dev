@@ -68,11 +68,21 @@ module Types (F : Ctypes.TYPE) = struct
 			{ origin; size }
 
 		let t = view ~read:to_t ~write:of_t rect
+
+		let t_of_raw_address addr =
+			ptr_of_raw_address addr
+			|> coerce (ptr void) (ptr rect)
+			|> (!@)
+			|> to_t
 	end
 
 	module CGContext = struct
 		type t
+
 		let t : t Opaque.t typ = typedef Opaque.t "CGContextRef"
+
+		let t_of_raw_address addr =
+			coerce (ptr void) t (ptr_of_raw_address addr)
 	end
 
 end
