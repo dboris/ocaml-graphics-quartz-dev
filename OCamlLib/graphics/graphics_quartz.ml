@@ -1,7 +1,6 @@
 open Core_graphics.C.Type
 open Core_graphics.C.Function
 
-type cgcontext = CGContext.t Opaque.t
 
 (* Graphics Context *)
 
@@ -49,6 +48,12 @@ let background = white
 and foreground = black
 
 (* Drawing *)
+
+let plot x' y' =
+  let x = Float.of_int x' and y = Float.of_int y' in
+  CGContext.fill_rect
+    (current_context ())
+    CGRect.(make ~x ~y ~width:1. ~height:1. |> of_t)
 
 let fill_rect x' y' w h =
   if w < 0 || h < 0 then raise (Invalid_argument "fill_rect");

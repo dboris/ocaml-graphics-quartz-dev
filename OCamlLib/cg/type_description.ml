@@ -74,6 +74,12 @@ module Types (F : Ctypes.TYPE) = struct
 			|> coerce (ptr void) (ptr rect)
 			|> (!@)
 			|> to_t
+
+		(* ! Shaddows Ctypes.make ! *)
+		let make ~x:x' ~y:y' ~width:width' ~height:height' =
+			{ origin = CGPoint.{ x = x'; y = y' }
+			; size = CGSize.{ width = width'; height = height' }
+			}
 	end
 
 	module CGContext = struct

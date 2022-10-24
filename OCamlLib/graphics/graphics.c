@@ -6,6 +6,8 @@
 
 #include "graphics.h"
 
+// TODO parameterize "draw_rect" cb name
+
 void
 draw_rect (CGContextRef ctx, CGRect dirty_rect, CGRect bounds)
 {

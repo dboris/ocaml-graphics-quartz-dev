@@ -15,7 +15,10 @@ module View = struct
 
     fill_rect 0 0
       (Float.to_int bounds.size.width)
-      (Float.to_int bounds.size.height)
+      (Float.to_int bounds.size.height);
+
+    set_color foreground;
+    plot 100 100
 end
 
 let main () =
