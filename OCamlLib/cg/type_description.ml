@@ -1,6 +1,8 @@
 open Ctypes
 
 module Types (F : Ctypes.TYPE) = struct
+	module Opaque = Opaque
+
 	module CGPoint = struct
 		type point
 		let point : point structure typ = structure "CGPoint"

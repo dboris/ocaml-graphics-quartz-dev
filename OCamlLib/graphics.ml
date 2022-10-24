@@ -1,8 +1,11 @@
 open Core_graphics.C.Type
 open Core_graphics.C.Function
 
-let current_context : CGContext.t Core_graphics.Opaque.t option ref =
+let current_context_ref : CGContext.t Opaque.t option ref =
   ref None
+
+let current_context () =
+  Option.get !current_context_ref
 
 (* Colors *)
 
@@ -10,12 +13,11 @@ type color = int
 
 let rgb r g b = (r lsl 16) + (g lsl 8) + b
 
-(* external set_color : color -> unit = "caml_gr_set_color" *)
 let set_color ?(alpha = 1.) color =
   let r = (color lsr 16) land 0xFF |> Float.of_int
   and g = (color lsr 8) land 0xFF |> Float.of_int
   and b = color land 0xFF |> Float.of_int
-  and ctx = Option.get !current_context
+  and ctx = current_context ()
   in
   CGContext.set_rgb_fill_color ctx r g b alpha
 
@@ -39,6 +41,17 @@ let background = white
 
 and foreground = black
 
+(* Drawing *)
+
+let fill_rect x' y' w h =
+  if w < 0 || h < 0 then raise (Invalid_argument "fill_rect");
+  let origin = CGPoint.{ x = Float.of_int x'; y = Float.of_int y' }
+  and size = CGSize.{ width = Float.of_int w; height = Float.of_int h }
+  in
+  CGContext.fill_rect
+    (current_context ())
+    (CGRect.of_t { origin; size })
+
 let cgrect_of_pointer rect_ptr =
   Ctypes.ptr_of_raw_address rect_ptr
   |> Ctypes.(coerce (ptr void) (ptr CGRect.rect))
@@ -52,15 +65,11 @@ module View = struct
       |> Ctypes.(coerce (ptr void) CGContext.t)
     and dr = cgrect_of_pointer dirty_rect_ptr
     and bounds = cgrect_of_pointer bounds_ptr in
-    let origin = CGPoint.{ x = 0.; y = 0.}
-    and size =
-      CGSize.{ width = bounds.size.width; height = bounds.size.height } in
-    let rect = CGRect.of_t { origin; size } in
-    current_context := Some ctx;
+    current_context_ref := Some ctx;
     Printf.eprintf "Dirty rect: x=%f, y=%f, width=%f, height=%f\n%!"
       dr.origin.x dr.origin.y dr.size.width dr.size.height;
-    set_color red;
-    CGContext.fill_rect ctx rect
+    set_color ~alpha:0.5 green;
+    fill_rect 0 0 (Float.to_int bounds.size.width) (Float.to_int bounds.size.height)
 end
 
 let main () =
