@@ -1,6 +1,8 @@
 open Core_graphics.C.Type
 open Core_graphics.C.Function
 
+type cgcontext = CGContext.t Opaque.t
+
 (* Graphics Context *)
 
 let current_context_ref : CGContext.t Opaque.t option ref =
@@ -59,12 +61,12 @@ let fill_rect x' y' w h =
 
 (* Helpers *)
 
-let cgrect_of_pointer rect_ptr =
-  Ctypes.ptr_of_raw_address rect_ptr
+let cgrect_of_raw_address rect_addr =
+  Ctypes.ptr_of_raw_address rect_addr
   |> Ctypes.(coerce (ptr void) (ptr CGRect.rect))
   |> Ctypes.(!@)
   |> CGRect.to_t
 
-(* class virtual view = object
-  method virtual draw_rect : nativeint -> nativeint -> nativeint -> unit
-end *)
+let cgcontext_of_raw_address ctx_addr =
+  Ctypes.ptr_of_raw_address ctx_addr
+  |> Ctypes.(coerce (ptr void) CGContext.t)

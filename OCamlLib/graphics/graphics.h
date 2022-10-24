@@ -1,3 +1,3 @@
-#import <CoreGraphics/CoreGraphics.h>
+#include <CoreGraphics/CoreGraphics.h>
 
 void draw_rect (CGContextRef, CGRect, CGRect);
