@@ -91,4 +91,9 @@ module Types (F : Ctypes.TYPE) = struct
 			coerce (ptr void) t (ptr_of_raw_address addr)
 	end
 
+	(* module CGContextTest = struct
+		type t
+		let t : t structure typ = structure "CGContext"
+		let () = seal t
+	end *)
 end
