@@ -1,12 +1,10 @@
-include Core_graphics.C.Type
-open Core_graphics.C.Function
-
+include Core_graphics
 
 (* Graphics Context *)
 
 module GraphicsContext = struct
   type t =
-    { cg_context : CGContext.t Opaque.t option
+    { cg_context : CGContext.t option
     ; line_width : float
     }
 

@@ -1,6 +1,5 @@
 open Graphics_quartz
 
-
 module View = struct
   let draw_rect context dirty_rect_ptr bounds_ptr =
     let ctx = CGContext.t_of_raw_address context
